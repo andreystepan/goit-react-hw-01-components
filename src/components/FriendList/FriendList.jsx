@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types'
+ import PropTypes from 'prop-types'
 
 
 
@@ -14,8 +14,8 @@ const FriendListItem = ({avatar,name}) => {
 }
 
 export const FriendList = ({ friends }) => {
+     return (
     <ul>
-        return (
         {friends.map(friend => {
             return (
                 <FriendListItem
@@ -25,6 +25,15 @@ export const FriendList = ({ friends }) => {
                     isOnline={friend.isOnline} />
             )
         })}
-        )
+        
     </ul>
+)}
+
+FriendListItem.propTypes = {
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+}
+
+FriendList.propTypes = {
+    friends: PropTypes.array.isRequired,
 }
