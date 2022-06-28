@@ -1,21 +1,22 @@
- import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import {List, Status,FriendItem,FriendAvatar } from './FriendList.styled';
 
 
 
 
-const FriendListItem = ({avatar,name}) => {
+const FriendListItem = ({avatar,name,isOnline}) => {
     return (
-        <li >
-            <span ></span>
-            <img  src={avatar} alt="User avatar" width="48" />
+        <FriendItem >
+            <Status style={{ backgroundColor: isOnline ? 'green' : 'red' }}></Status>
+            <FriendAvatar  src={avatar} alt="User avatar" width="48" />
             <p >{name}</p>
-</li>
+</FriendItem>
     )
 }
 
 export const FriendList = ({ friends }) => {
      return (
-    <ul>
+    <List>
         {friends.map(friend => {
             return (
                 <FriendListItem
@@ -26,7 +27,7 @@ export const FriendList = ({ friends }) => {
             )
         })}
         
-    </ul>
+    </List>
 )}
 
 FriendListItem.propTypes = {
