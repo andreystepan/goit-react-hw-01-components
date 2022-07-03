@@ -1,10 +1,5 @@
 import styled from '@emotion/styled'
 
-export const List = styled.ul`
-width: 300px;
-margin: 0 auto;
-padding: 0;`;
-
 
 export const FriendItem = styled.li`
 display: flex;
@@ -21,7 +16,10 @@ border-radius: 50%;
     width: 15px;
     height: 15px;
     margin-right: 15px;
-    display: inline-block;`;
+    display: inline-block;
+    background-color: ${props => (props.isOnline ? 'green' : 'red')};`;
 
 export const FriendAvatar = styled.img`
 margin-right: 20px;`;
+
+
